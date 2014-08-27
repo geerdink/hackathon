@@ -1,0 +1,39 @@
+Digital Mortgage Advisor
+
+Mortgage Advisor Digitalizerz
+
+predictive analytics
+
+
+
+- vermogen boven vrijstelling in box 3 ? (21139)  -> vermogensrendementsheffing van 1.2 %
+- bufferberekenaar Nibud: https://service.nibud.nl/bufferberekenaar/#/panel1
+
+- boete
+
+- risicoprofiel
+
+
+http://www.hypotheekrente-annuiteitenhypotheek.nl/annuiteit-berekenen.php
+https://www.deltalloyd.nl/hypotheek/extra-aflossen/aflossen-of-sparen.jsp
+http://www.homefinance.nl/hypotheek/berekenen/maandlasten-hypotheek-berekenen.asp
+
+
+https://developers.google.com/prediction/docs/developer-guide
+
+
+
+machine learning:
+- supervised learning
+	- regression (continuous / numerical)  <--  e.g.  67% van inleg aflossen
+	- categorization  <--  e.g. aflossen/beleggen/sparen
+- unsupervised learning
+	- clustering
+	
+	
+linear regression
+- univariate = 1 variable, e.g. inleg / spaargeld
+- multiple variables, e.g. hoogte hypotheek, rentestand, spaargeld, thuissituatie, economisch tij, leeftijd, man/vrouw, 
+	- schaal moet ongeveer gelijk zijn ?!
+
+
