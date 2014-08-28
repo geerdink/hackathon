@@ -7,11 +7,11 @@ angular.module('MortgageAdviser')
         $scope.createAdvice = function(){
 
             function onSuccess(response) {
-                alert(response);
+                alert(JSON.stringify(response));
                 $scope.adviceResult = response;
             }
 
-            adviceService.createAdvice($scope.spendingAmount, onSuccess);
+            adviceService.createAdvice($scope.spendingAmount, $scope.availableAmount, onSuccess);
 
         };
 
