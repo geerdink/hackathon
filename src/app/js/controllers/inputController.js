@@ -4,6 +4,9 @@ angular.module('MortgageAdviser')
 
             $scope.availableAmount = 10000;
             $scope.spendingAmount = 5000;
+            $scope.interestRateMortgage = 4.2;
+            $scope.interestRateSavings = 1.6;
+            $scope.adviceResult = "";
 
             twitterProfilingService.determineTravelProfile().then(
                 function onSuccess(profile) {
@@ -14,13 +17,12 @@ angular.module('MortgageAdviser')
             );
 
             $scope.createAdvice = function () {
-                adviceService.createAdvice($scope.spendingAmount).then(
+                adviceService.createAdvice([$scope.spendingAmount, $scope.availableAmount, $scope.interestRateMortgage, $scope.interestRateSavings]).then(
                     function onSuccess(advice) {
-                        $scope.adviceResult = advice;
+                        $scope.adviceResult = JSON.stringify(advice);
                     }
                 );
             };
-
         }
-    ]
-);
+    ]);
+
