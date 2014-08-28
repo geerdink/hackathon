@@ -1,27 +1,35 @@
-<div data-ng-controller="inputController">
+<div data-ng-controller="inputController" class="panel panel-default">
+    <div class="panel-body">
 
-    <dl>
-        <dt>
-            Saldo
-        </dt>
-        <dd>
-            {{availableAmount}}
-        </dd>
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
 
-        <dt>
-            Spenderen
-        </dt>
-        <dd>
-            <input type="number" data-ng-model="spendingAmount" />
-        </dd>
-    </dl>
+                <label class="col-sm-2 control-label">Beschikbaar</label>
+                <div class="col-sm-3 col-sm">
+                    <p class="form-control-static">
+                        {{availableAmount}}
+                    </p>
+                </div>
 
-    <p>
-        U wilt spenderen: {{spendingAmount}} van {{availableAmount}}
-    </p>
+            </div>
+            <div class="form-group">
 
-    <button type="button" data-ng-click="createAdvice()">Bereken</button>
+                <label for="spendingAmount" class="col-sm-2 control-label">Te spenderen</label>
+                <div class="col-sm-3">
+                    <input type="number" data-ng-model="spendingAmount" class="form-control" id="spendingAmount" />
+                </div>
 
-    <div data-ng-include="'views/advice.html'"></div>
+            </div>
+            <div class="form-group">
 
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" data-ng-click="createAdvice()" class="btn btn-primary">Berekenen</button>
+                </div>
+
+            </div>
+        </form>
+
+        <div data-ng-include="'views/advice.html'"></div>
+
+    </div>
 </div>
