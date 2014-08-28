@@ -1,5 +1,5 @@
 angular.module('MortgageAdviser')
-    .controller('InputController', ['$scope', 'adviceService', function($scope, adviceService) {
+    .controller('inputController', ['$scope', 'adviceService', function($scope, adviceService) {
 
         $scope.availableAmount = 10000;
         $scope.spendingAmount = 0;

@@ -1,14 +1,12 @@
-<div data-ng-controller="AdviceController">
+<div data-ng-controller="adviceController">
 
-<!--    <button type="button" ng-click="toggleCustom()">Resultaat aanwezig?</button>
--->
-    <!-- Only show next block when a result is available -->
-    <span ng-show="adviceResult">
+    <div data-ng-show="adviceResult">
 
         <h3>Resultaat van de berekening</h3>
-        <p/>
-        In uw situatie is ons advies:  <b>{{adviceResult}}</b>
-    </span>
+        <p>
+            In uw situatie is ons advies:  <b>{{adviceResult}}</b>
+        </p>
 
+    </div>
 
 </div>

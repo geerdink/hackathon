@@ -1,5 +1,5 @@
 angular.module('MortgageAdviser')
-    .controller('AdviceController', ['$scope', function($scope) {
+    .controller('adviceController', ['$scope', function($scope) {
 
         $scope.adviceTest = "Hello advice!";
         $scope.resultAvailable = true;
