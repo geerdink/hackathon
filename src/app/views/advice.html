@@ -1,6 +1,18 @@
 <div data-ng-controller="AdviceController">
 
-    it: {{inputTest}}
-    at: {{adviceTest}}
+    <button type="button" ng-click="toggleCustom()">Resultaat aanwezig?</button>
+
+
+    <span ng-hide="resultAvailable">
+
+    <h3>Resultaat van de berekening</h3>
+    <p/>
+    In uw situatie is ons advies:<br>
+        ...
+
+    <br>it: {{inputTest}}
+    <br>at: {{adviceTest}}
+    </span>
+
 
 </div>
