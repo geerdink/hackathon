@@ -1,0 +1,19 @@
+{
+  "name": "mortgage-adviser",
+  "version": "1.0.0",
+  "description": "The MortgageAdviser helps customers decide how to spend their savings.",
+  "main": "-",
+  "scripts": {
+    "test": "-"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/geerdink/hackathon.git"
+  },
+  "author": "Team MAD",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/geerdink/hackathon/issues"
+  },
+  "homepage": "https://github.com/geerdink/hackathon"
+}
