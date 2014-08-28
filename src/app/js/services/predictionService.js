@@ -36,10 +36,9 @@ angular.module('MortgageAdviser')
                     });
                 };
 
-
                 window.setTimeout(checkAuth, 1);
             }
-        }
+        };
     }
     ]);
 
