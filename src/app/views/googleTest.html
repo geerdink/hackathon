@@ -74,14 +74,16 @@
       function makeApiCall() {
         gapi.client.load('prediction', 'v1.6', function() {
           var request = gapi.client.prediction.trainedmodels.predict({
-             "input": '{"csvInstance": ["hello monsieur isla bonita yes si muy bueno"] }'  
+          	"id": "test1234",
+          	"project": "disco-rope-684",
+             "input": {"csvInstance": ["hello monsieur isla bonita yes si muy bueno"] }  
             });
           request.execute(function(resp) {
+          	//alert(JSON.stringify(resp));
             var heading = document.createElement('h4');
-            var image = document.createElement('img');
-            image.src = resp.image.url;
-            heading.appendChild(image);
-            heading.appendChild(document.createTextNode(resp.displayName));
+            heading.appendChild(document.createTextNode(JSON.stringify(resp)));
+           //var paragraph = document.createElement('p');
+           //paragraph.appendChild(resp);
 
             document.getElementById('content').appendChild(heading);
           });
