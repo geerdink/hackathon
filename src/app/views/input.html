@@ -2,31 +2,43 @@
     <div class="panel-body">
 
         <form class="form-horizontal" role="form">
-            <div class="form-group">
+        	
+        	<div class="form-group">
+        	    <label for="interestRateMortgages" class="col-sm-2 control-label">Rentepercentage op uw hypotheek</label>
+                <div class="col-sm-3 col-sm">
+                     <input type="number" step="any" data-ng-model="interestRateMortgage" class="form-control" id="interestRateMortgage" />
+                </div>
+           </div>
+           
+           <div class="form-group">
+        	    <label for="interestRateSavings" class="col-sm-2 control-label">Rentepercentage op uw spaarrekening</label>
+                <div class="col-sm-3 col-sm">
+                     <input type="number" step="any" data-ng-model="interestRateSavings" class="form-control" id="interestRateSavings" />
+                </div>
+           </div>
 
+            <div class="form-group">
                 <label class="col-sm-2 control-label">Spaarsaldo</label>
                 <div class="col-sm-3 col-sm">
                     <p class="form-control-static">
                         {{availableAmount}}
                     </p>
                 </div>
-
             </div>
+            
             <div class="form-group">
-
                 <label for="spendingAmount" class="col-sm-2 control-label">Te spenderen</label>
                 <div class="col-sm-3">
                     <input type="number" data-ng-model="spendingAmount" class="form-control" id="spendingAmount" />
                 </div>
-
             </div>
+            
             <div class="form-group">
-
                 <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" data-ng-click="createAdvice()" class="btn btn-primary">Berekenen</button>
                 </div>
-
             </div>
+            
         </form>
 
         <div data-ng-include="'views/advice.html'"></div>

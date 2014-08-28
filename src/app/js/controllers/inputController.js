@@ -3,6 +3,8 @@ angular.module('MortgageAdviser')
 
         $scope.availableAmount = 10000;
         $scope.spendingAmount = 0;
+        $scope.interestRateMortgage = 4.2;
+        $scope.interestRateSavings = 1.6;
 
         $scope.createAdvice = function(){
 
@@ -11,7 +13,7 @@ angular.module('MortgageAdviser')
                 $scope.adviceResult = response;
             }
 
-            adviceService.createAdvice($scope.spendingAmount, $scope.availableAmount, onSuccess);
+            adviceService.createAdvice([$scope.spendingAmount, $scope.availableAmount, $scope.interestRateMortgage, $scope.interestRateSavings], onSuccess);
 
         };
 
