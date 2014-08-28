@@ -1,17 +1,18 @@
 'use strict';
 
 angular.module('MortgageAdviser')
-    .factory('predictionService', [function() {
+    .factory('predictionService', ['$q', function($q) {
 
         var clientId = '253060209883-tvd1u02vhpbj1c1ooqrtaogjqj99p58o.apps.googleusercontent.com';
         var apiKey = 'AIzaSyDI6qXzvhzjordz7FmsOn1b6tT_X9eY1Bs';
         var scopes = 'https://www.googleapis.com/auth/prediction';
 
         return {
-            predict: function(id, inputValues, onSuccess) {
-                gapi.client.setApiKey(apiKey);
+            predict: function(id, inputValues) {
+                var deferred = $q.defer();
 
                 var checkAuth = function () {
+                    gapi.client.setApiKey(apiKey);
                     gapi.auth.authorize({ client_id: clientId, scope: scopes, immediate: true }, handleAuthResult);
                 };
 
@@ -32,14 +33,14 @@ angular.module('MortgageAdviser')
                                 csvInstance: inputValues
                             }
                         });
-                        request.execute(onSuccess);
+                        request.execute(deferred.resolve);
                     });
                 };
 
-                window.setTimeout(checkAuth, 1);
+                window.setTimeout(checkAuth, 100);
+                return deferred.promise;
             }
-        };
-    }
-    ]);
+        }
+    }]);
 
 

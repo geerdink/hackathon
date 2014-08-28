@@ -1,5 +1,6 @@
 angular.module('MortgageAdviser')
-    .controller('inputController', ['$scope', 'adviceService', function($scope, adviceService) {
+    .controller('inputController', ['$scope', 'adviceService', 'twitterProfilingService',
+        function($scope, adviceService, twitterProfilingService) {
 
         $scope.availableAmount = 10000;
         $scope.spendingAmount = 0;
@@ -7,16 +8,21 @@ angular.module('MortgageAdviser')
         $scope.interestRateSavings = 1.6;
         //$scope.adviceResult = "";
 
-        $scope.createAdvice = function(){
-
-            function onSuccess(response) {
-                $scope.adviceResult = JSON.stringify(response);
-	            $scope.$digest();
+        twitterProfilingService.determineTravelProfile().then(
+            function onSuccess(profile) {
+                if (profile == 'high') {
+                    $scope.spendingAmount /= 0.1;
+                }
             }
+        );
 
-            adviceService.createAdvice([$scope.spendingAmount, $scope.availableAmount, $scope.interestRateMortgage, $scope.interestRateSavings], onSuccess);
-
+        $scope.createAdvice = function () {
+            adviceService.createAdvice([$scope.spendingAmount, $scope.availableAmount, $scope.interestRateMortgage, $scope.interestRateSavings]).then(
+                function onSuccess(advice) {
+                    $scope.adviceResult = JSON.stringify(advice);
+                }
+            );
         };
+    }
+]);
 
-    }]
-);

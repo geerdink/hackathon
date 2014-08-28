@@ -3,11 +3,15 @@
 angular.module('MortgageAdviser')
     .factory('adviceService', ['$resource', 'predictionService', function($resource, predictionService){
 
-        function createAdvice(inputData, callback) {
-            predictionService.predict("mortgagedata", inputData, callback);
+        function createAdvice(inputData) {
+            return predictionService.predict("mortgagedata", inputData).then(
+                function onSuccess(prediction) {
+                    return prediction.outputLabel;
+                }
+            );
         }
 
         return {
             createAdvice: createAdvice
-        };
+        }
     }]);
