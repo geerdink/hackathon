@@ -1,1 +1,1 @@
-angular.module('MortgageAdviser', []);
+angular.module('MortgageAdviser', ['ngResource']);

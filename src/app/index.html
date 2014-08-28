@@ -4,15 +4,24 @@
         <title>MortgageAdviser</title>
 
         <script src="lib/angular/angular.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+        <script src="lib/angular-resource/angular-resource.js"></script>
         <script src="js/MortgageAdviser.js"></script>
         <script src="js/controllers/InputController.js"></script>
         <script src="js/controllers/AdviceController.js"></script>
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <script src="js/services/AdviceService.js"></script>
     </head>
     <body data-ng-app="MortgageAdviser">
+        <div class="container">
 
-        <h1>Mortgage Adviser</h1>
+            <h1>Mortgage Adviser</h1>
 
-        <div data-ng-include="'views/input.html'"></div>
+            <div data-ng-include="'views/input.html'"></div>
 
+        </div>
     </body>
 </html>

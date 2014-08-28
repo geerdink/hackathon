@@ -1,8 +1,19 @@
 angular.module('MortgageAdviser')
-    .controller('InputController', ['$scope', function($scope) {
+    .controller('InputController', ['$scope', 'adviceService', function($scope, adviceService) {
 
         $scope.availableAmount = 10000;
         $scope.spendingAmount = 0;
+
+        $scope.createAdvice = function(){
+            adviceService.createAdvice().then(
+                function onSuccess(response) {
+                    $scope.adviceResult = response;
+                },
+                function onFailure() {
+
+                }
+            )
+        };
 
     }]
 );

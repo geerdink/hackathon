@@ -1,17 +1,13 @@
 <div data-ng-controller="AdviceController">
 
-    <button type="button" ng-click="toggleCustom()">Resultaat aanwezig?</button>
+<!--    <button type="button" ng-click="toggleCustom()">Resultaat aanwezig?</button>
+-->
+    <!-- Only show next block when a result is available -->
+    <span ng-show="adviceResult">
 
-
-    <span ng-hide="resultAvailable">
-
-    <h3>Resultaat van de berekening</h3>
-    <p/>
-    In uw situatie is ons advies:<br>
-        ...
-
-    <br>it: {{inputTest}}
-    <br>at: {{adviceTest}}
+        <h3>Resultaat van de berekening</h3>
+        <p/>
+        In uw situatie is ons advies:  <b>{{adviceResult}}</b>
     </span>
 
 
