@@ -13,6 +13,7 @@ predictive analytics
 
 - risicoprofiel
 
+https://www.ing.nl/particulier/hypotheken/uw-situatie/uw-ing-hypotheek/hulp-bij-hypotheken/index3.aspx
 
 http://www.hypotheekrente-annuiteitenhypotheek.nl/annuiteit-berekenen.php
 https://www.deltalloyd.nl/hypotheek/extra-aflossen/aflossen-of-sparen.jsp
@@ -20,20 +21,21 @@ http://www.homefinance.nl/hypotheek/berekenen/maandlasten-hypotheek-berekenen.as
 
 
 https://developers.google.com/prediction/docs/developer-guide
-
+https://developers.google.com/api-client-library/javascript/start/start-js
 
 
 machine learning:
 - supervised learning
 	- regression (continuous / numerical)  <--  e.g.  67% van inleg aflossen
-	- categorization  <--  e.g. aflossen/beleggen/sparen
+	- categorization / classification <--  e.g. aflossen: 30%, beleggen: 30%, sparen: 40%
+		- multi-label / multi-output classification ??
 - unsupervised learning
 	- clustering
 	
 	
 linear regression
 - univariate = 1 variable, e.g. inleg / spaargeld
-- multiple variables, e.g. hoogte hypotheek, rentestand, spaargeld, thuissituatie, economisch tij, leeftijd, man/vrouw, 
+- multiple variables / features, e.g. hoogte hypotheek, rentestand, spaargeld, thuissituatie, economisch tij, leeftijd, man/vrouw, inkomen, looptijd, woz, risico bereidheid, totale vermogen
 	- schaal moet ongeveer gelijk zijn ?!
 
 
