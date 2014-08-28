@@ -1,6 +1,24 @@
 <div data-ng-controller="InputController">
 
-    it1: {{inputTest}}
+    <dl>
+        <dt>
+            Saldo
+        </dt>
+        <dd>
+            {{availableAmount}}
+        </dd>
+
+        <dt>
+            Spenderen
+        </dt>
+        <dd>
+            <input type="number" data-ng-model="spendingAmount" />
+        </dd>
+    </dl>
+
+    <p>
+        U wilt spenderen: {{spendingAmount}} van {{availableAmount}}
+    </p>
 
     <div data-ng-include="'views/advice.html'"></div>
 

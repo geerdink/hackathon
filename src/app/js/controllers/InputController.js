@@ -1,7 +1,8 @@
 angular.module('MortgageAdviser')
     .controller('InputController', ['$scope', function($scope) {
 
-        $scope.inputTest = "Hello world!";
+        $scope.availableAmount = 10000;
+        $scope.spendingAmount = 0;
 
     }]
 );
