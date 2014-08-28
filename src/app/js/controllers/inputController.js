@@ -5,14 +5,14 @@ angular.module('MortgageAdviser')
         $scope.spendingAmount = 0;
 
         $scope.createAdvice = function(){
-            adviceService.createAdvice().then(
-                function onSuccess(response) {
-                    $scope.adviceResult = response;
-                },
-                function onFailure() {
 
-                }
-            )
+            function onSuccess(response) {
+                alert(response);
+                $scope.adviceResult = response;
+            }
+
+            adviceService.createAdvice($scope.spendingAmount, onSuccess);
+
         };
 
     }]
