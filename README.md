@@ -7,4 +7,3 @@ Team:
 - Bart Rabeling
 - Bas Eefting
 - Bas Geerdink
-- 
