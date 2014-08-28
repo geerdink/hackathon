@@ -1,14 +1,27 @@
-<div>
-    <div>
-        <br />
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                Advies
-            </div>
-            <div class="panel-body">
-                In uw situatie is ons advies:  <b>{{adviceResult}}</b>
-            </div>
+<div data-ng-show="adviceResult">
+    <br />
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Advies
         </div>
-
+        <div class="panel-body">
+            In uw situatie is ons advies: <i>hoofdzakelijk</i> <b>{{adviceResult}}</b>
+            
+            <table>
+            	<tr>
+            		<td>Percentage aflossen:</td>
+            		<td>{{adviseRepayment}}</td>
+            	</tr>
+            	<tr>
+            		<td>Percentage sparen:</td>
+            		<td>{{adviseSaving}}</td>
+            	</tr>
+            	<tr>
+            		<td>Percentage beleggen:</td>
+            		<td>{{adviseInvestment}}</td>
+            	</tr>
+            </table>
+        </div>
     </div>
+
 </div>
