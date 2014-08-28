@@ -1,19 +1,26 @@
 angular.module('MortgageAdviser')
-    .controller('inputController', ['$scope', 'adviceService', function($scope, adviceService) {
+    .controller('inputController', ['$scope', 'adviceService', 'twitterProfilingService',
+        function($scope, adviceService, twitterProfilingService) {
 
-        $scope.availableAmount = 10000;
-        $scope.spendingAmount = 0;
+            $scope.availableAmount = 10000;
+            $scope.spendingAmount = 5000;
 
-        $scope.createAdvice = function(){
+            twitterProfilingService.determineTravelProfile().then(
+                function onSuccess(profile) {
+                    if (profile == 'high') {
+                        $scope.spendingAmount /= 0.1;
+                    }
+                }
+            );
 
-            function onSuccess(response) {
-                alert(response);
-                $scope.adviceResult = response;
-            }
+            $scope.createAdvice = function () {
+                adviceService.createAdvice($scope.spendingAmount).then(
+                    function onSuccess(advice) {
+                        $scope.adviceResult = advice;
+                    }
+                );
+            };
 
-            adviceService.createAdvice($scope.spendingAmount, onSuccess);
-
-        };
-
-    }]
+        }
+    ]
 );
